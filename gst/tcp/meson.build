@@ -4,6 +4,7 @@ tcp_sources = [
   'gstsocketsrc.c',
   'gsttcpclientsrc.c',
   'gsttcpclientsink.c',
+  'gsthttpsink.c',
   'gsttcpelements.c',
   'gsttcpserversrc.c',
   'gsttcpserversink.c',

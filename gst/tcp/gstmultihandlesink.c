@@ -540,6 +540,7 @@ gst_multi_handle_sink_client_init (GstMultiHandleClient * client,
   client->new_connection = TRUE;
   client->sync_method = sync_method;
   client->currently_removing = FALSE;
+  client->handle_write = TRUE;
 
   /* update start time */
   client->connect_time = g_get_real_time () * GST_USECOND;

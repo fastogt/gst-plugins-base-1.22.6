@@ -33,6 +33,7 @@ plugin_init (GstPlugin * plugin)
   ret |= GST_ELEMENT_REGISTER (tcpclientsrc, plugin);
   ret |= GST_ELEMENT_REGISTER (tcpserversink, plugin);
   ret |= GST_ELEMENT_REGISTER (tcpserversrc, plugin);
+  ret |= GST_ELEMENT_REGISTER (httpsink, plugin);
 
 #ifdef HAVE_SYS_SOCKET_H
   ret |= GST_ELEMENT_REGISTER (multifdsink, plugin);

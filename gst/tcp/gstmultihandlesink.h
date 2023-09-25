@@ -172,6 +172,8 @@ typedef struct {
   guint64 avg_queue_size;
   guint64 first_buffer_ts;
   guint64 last_buffer_ts;
+  
+  gboolean handle_write;
 } GstMultiHandleClient;
 
 #define CLIENTS_LOCK_INIT(mhsink)       (g_rec_mutex_init(&(mhsink)->clientslock))

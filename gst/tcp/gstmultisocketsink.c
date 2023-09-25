@@ -451,6 +451,7 @@ gst_multi_socket_sink_init (GstMultiSocketSink * this)
   this->cancellable = g_cancellable_new ();
   this->send_dispatched = DEFAULT_SEND_DISPATCHED;
   this->send_messages = DEFAULT_SEND_MESSAGES;
+  this->read_buffer = NULL;
 }
 
 static void
@@ -663,6 +664,12 @@ gst_multi_socket_sink_handle_client_read (GstMultiSocketSink * sink,
     first = FALSE;
   } while (navail > 0);
   g_clear_error (&err);
+
+  if (ret) {
+    if (sink->read_buffer) {
+      sink->read_buffer(sink, mhclient, mem, maxmem);
+    }
+  }
 
   if (do_event) {
     if (ret) {
